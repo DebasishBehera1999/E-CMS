@@ -19,7 +19,7 @@ const validationSchema = yup.object().shape({
   district: yup.string().required('District is required'),
   mandal: yup.string().required('Mandal is required'),
   village: yup.string().required('Village is required'),
-  source: yup.string().required('Source is required'),
+
   
 });
 
@@ -39,14 +39,7 @@ const data = {
     "Punganur": ["Punganur Village 1", "Punganur Village 2"],
     "Madanapalle": ["Madanapalle Village 1", "Madanapalle Village 2"],
   },
-  sources: [
-    "Email",
-    "Phone",
-    "EC",
-    "Press/e-Media",
-    "In-writing",
-    "SMS",
-  ],
+
 };
 
 const districtCodes = {
@@ -167,7 +160,7 @@ const ComplaintForm = () => {
     >
       <Head/>
     <Formik
-      initialValues={{ name: '', aadhar: '', phone: '', complaintDetails: '', district: '', mandal: '', village: '', source: '', selectedFile: null, }}
+      initialValues={{ name: '', aadhar: '', phone: '', complaintDetails: '', district: '', mandal: '', village: '', selectedFile: null, }}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
@@ -256,20 +249,8 @@ const ComplaintForm = () => {
             </View>
             {touched.village && errors.village && <Text style={styles.errorText}>{errors.village}</Text>}
 
-            <Text style={styles.text}>Source</Text>
-            <View style={styles.pickerContainer}>
-              <Picker
-                selectedValue={values.source}
-                onValueChange={(itemValue) => setFieldValue('source', itemValue)}
-                style={styles.picker}
-              >
-                <Picker.Item label="Select Source" value="" />
-                {data.sources.map((source) => (
-                  <Picker.Item key={source} label={source} value={source} />
-                ))}
-              </Picker>
-            </View>
-            {touched.source && errors.source && <Text style={styles.errorText}>{errors.source}</Text>}
+            
+           
 
             <Text style={styles.text} >Attachment:</Text>
             <TouchableOpacity onPress={() => handleFilePick(setFieldValue)} style={styles.file}>
