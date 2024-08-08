@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Modal, Button, Te
 import React, { useEffect, useState } from 'react';
 import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
 import styles from './Adashcss';
+import Head from './Head';
 
 const AgentDashboard = ({navigation}) => {
   const [data, setData] = useState([]);
@@ -17,14 +18,14 @@ const AgentDashboard = ({navigation}) => {
   const [updatedDistrict, setUpdatedDistrict] = useState('');
 
   const getAPIData = async () => {
-    const url = "http://192.168.1.143:3000/users";
+    const url = "http://192.168.1.179:3000/users";
     let result = await fetch(url);
     result = await result.json();
     setData(result);
   };
 
   const deleteUser = async (id) => {
-    const url = "http://192.168.1.143:3000/users";
+    const url = "http://192.168.1.179:3000/users";
     let result = await fetch(`${url}/${id}`, { method: "delete" });
     result = await result.json();
     if (result) {
@@ -77,7 +78,7 @@ const AgentDashboard = ({navigation}) => {
       district: updatedDistrict,
     };
 
-    const url = `http://192.168.1.91:3000/users/${selectedItem.id}`;
+    const url = `http://192.168.1.179:3000/users/${selectedItem.id}`;
     let result = await fetch(url, {
       method: "PUT",
       headers: {
@@ -114,11 +115,13 @@ const AgentDashboard = ({navigation}) => {
   );
 
   return (
+  
     <View style={styles.container}>
+      <Head/>
       <Text style={styles.head}>Agent Dashboard</Text>
 
       <ScrollView horizontal={true}>
-        <View>
+        <View style={styles.container1}> 
           <Table borderStyle={styles.tableBorder}>
             <Row data={tableHead} widthArr={widthArr} style={styles.header} textStyle={styles.headerText} />
           </Table>
@@ -206,6 +209,7 @@ const AgentDashboard = ({navigation}) => {
         </Modal>
       )}
     </View>
+    
   );
 };
 

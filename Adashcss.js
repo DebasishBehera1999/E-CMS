@@ -7,9 +7,12 @@ const { width, height } = Dimensions.get('window');
 export default StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
-        paddingTop: 30,
         backgroundColor: '#fff'
+      },
+      container1: {
+        flex: 1,
+        backgroundColor: '#fff',
+        padding:15,
       },
       head: {
         fontSize: 20,
@@ -34,8 +37,7 @@ export default StyleSheet.create({
       },
       row: {
         flexDirection: 'row',
-        backgroundColor: '#ffffff',
-        
+        backgroundColor: '#ffffff',        
       },
       text: {
         textAlign: 'center',
@@ -60,8 +62,7 @@ export default StyleSheet.create({
         backgroundColor: "red"
       },
       viewText: {
-        backgroundColor: "blue"
-        
+        backgroundColor: "blue"  
       },
       updateText: {
         backgroundColor: "#0E7452"

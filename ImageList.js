@@ -12,6 +12,7 @@ const images = [
   { src: require('./assets/eita.png'), url: 'https://apeita.ap.gov.in/' },
   { src: require('./assets/images.jpeg'), url: 'https://e-pragati.in/' },
   { src: require('./assets/tech.png'), url: 'https://apts.gov.in/' },
+  
 ];
 
 const ImageList = () => {
