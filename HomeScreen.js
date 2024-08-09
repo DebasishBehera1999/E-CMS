@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Text, View, ScrollView, TouchableOpacity, Linking, Image, Dimensions, Animated } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, Linking, Image, Dimensions, Animated,StatusBar } from 'react-native';
 import GovLink from './GovLink';
 import * as Animatable from 'react-native-animatable';
 import styles from './Homecss'; 
@@ -7,9 +7,6 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import ApPfofile from './ApPfofile';
-import ImageList from './ImageList';
-
-
 
 const { width } = Dimensions.get('window');
 
@@ -28,22 +25,22 @@ const HomeScreen = ({navigation}) => {
     }).start();
   }, []);
 
-  useEffect(() => {
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(floatAnimation, {
-          toValue: -10,
-          duration: 1500,
-          useNativeDriver: true,
-        }),
-        Animated.timing(floatAnimation, {
-          toValue: 0,
-          duration: 1500,
-          useNativeDriver: true,
-        }),
-      ])
-    ).start();
-  }, [floatAnimation]);
+  // useEffect(() => {
+  //   Animated.loop(
+  //     Animated.sequence([
+  //       Animated.timing(floatAnimation, {
+  //         toValue: -10,
+  //         duration: 1500,
+  //         useNativeDriver: true,
+  //       }),
+  //       Animated.timing(floatAnimation, {
+  //         toValue: 0,
+  //         duration: 1500,
+  //         useNativeDriver: true,
+  //       }),
+  //     ])
+  //   ).start();
+  // }, [floatAnimation]);
 
   useEffect(() => {
     Animated.loop(
@@ -112,6 +109,7 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
+       <StatusBar></StatusBar>
       <View style={styles.container1}>
         <Image source={require('./assets/apgovlogo.png')} style={styles.image} />
         <View style={styles.titleContainer}>
@@ -229,7 +227,7 @@ const HomeScreen = ({navigation}) => {
 
         <Animated.View style={[styles.card, animatedCardStyle]}>
           <View >
-            <TouchableOpacity onPress={() => navigation.navigate('AgentComplaint')}>
+            <TouchableOpacity onPress={() => navigation.navigate('DC')}>
               <Text style={styles.cardTitle}>Agent</Text>
             </TouchableOpacity>
           </View>

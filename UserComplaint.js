@@ -132,7 +132,7 @@ const ComplaintForm = () => {
       const currentDate = new Date();
       const complaintId = generateComplaintId(values.district, currentDate);
       const requestData = { ...values, complaintId,timeStamp };
-      const response = await fetch('http://192.168.1.143:3000/users', {
+      const response = await fetch('http://192.168.1.179:3000/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

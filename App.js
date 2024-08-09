@@ -13,6 +13,7 @@ import UserComplaint from './UserComplaint';
 import Tracker from './Tracker';
 import AgentDashboard from './AgentDashboard';
 import Controller from './Controller';
+import DC from './DC';
 
 
 
@@ -33,6 +34,7 @@ const App = () => {
         <Stack.Screen name="Tracker" component={Tracker}  options={{headerShown:false}}  />
         <Stack.Screen name="AgentDashboard" component={AgentDashboard}  options={{headerShown:false}}  />
         <Stack.Screen name="Controller" component={Controller}  options={{headerShown:false}}  />
+        <Stack.Screen name="DC" component={DC}  options={{headerShown:false}}  />
       </Stack.Navigator>
     </NavigationContainer>
   );

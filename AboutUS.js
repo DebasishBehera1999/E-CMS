@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, FlatList, Dimensions, Linking } from 'react-native';
 import React, { useState, useEffect, useRef } from 'react';
-// import ImageList from './ImageList';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from './Aboutcss'; 
@@ -29,17 +28,11 @@ const AboutUs = () => {
 <Entypo name='mail' size={width * 0.05} style={{ color: 'white' }} />
 <Text style={styles.mailText} onPress={()=>{Linking.openURL('mailto:ap.excise@gmail.com')}}>ap.excise@gmail.com</Text>
 </View>
-    {/* <View style={styles.mailpto}>
-    <FontAwesome name='globe' size={width * 0.05} style={{ color: 'white' }} />
-          <Text style={styles.contactText} onPress={() => { Linking.openURL('https://www.ap.gov.in') }}>
-            www.ap.gov.in
-          </Text></View>       */}
+ 
 </View>
       
       <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
-         {/* <View style={styles.imageContainer}>
-          <Image source={require('../../assets/img_list/banner_excise.jpg')} style={styles.img} />
-        </View>  */}
+       
         <View style={styles.borderContainer}>
           <Text style={styles.subhead}>About Excise Department</Text>
           <Text style={styles.description}>
@@ -50,7 +43,7 @@ const AboutUs = () => {
 
 <View style={styles.icon}>
 <Text style={styles.subhead}>Mission</Text>
-{/* <Image source={{ uri: 'https://w7.pngwing.com/pngs/924/981/png-transparent-mission-statement-vision-statement-business-art-our-mission-text-service-logo-thumbnail.png' }} style={styles.image1} /> */}
+
 </View>
           <Text style={styles.description}>
             Our mission is to protect public health and safety by regulating and controlling the manufacture, sale, and distribution of alcohol and tobacco products. We aim to promote responsible consumption and prevent illegal activities through effective enforcement and education.
@@ -59,7 +52,7 @@ const AboutUs = () => {
         <View style={styles.borderContainer}>
           <View style={styles.icon}>
           <Text style={styles.subhead}>Vision</Text>
-          {/* <Image source={{ uri: 'https://w7.pngwing.com/pngs/61/290/png-transparent-computer-icons-company-reverse-search-vision-statement-vision-miscellaneous-service-trademark-thumbnail.png' }} style={styles.image1} /> */}
+        
           </View>
           <Text style={styles.description}>
             Our vision is to create a safe and healthy environment for the citizens of Andhra Pradesh by ensuring compliance with excise laws, reducing illegal activities, and promoting responsible consumption of excisable goods.
@@ -129,20 +122,17 @@ const AboutUs = () => {
           </TouchableOpacity>
           <TouchableOpacity onPress={() => openLink('https://www.youtube.com')} style={styles.iconContainer}>
             <FontAwesome name="youtube" size={30} color="#FF0000" style={styles.icon} />
-          </TouchableOpacity>
-          
+          </TouchableOpacity> 
         </View>
-
-        <View>
+          <View>
           <Text style={styles.brand}>@Powered By <Text style={{ color: 'green' }} onPress={() => openLink('https://www.ridhitek.com')}>Ridhitek</Text></Text>
-        </View>
+          </View>
       </ScrollView>
+
     </View>
   );
 }
 
 export default AboutUs;
 
-// const styles = StyleSheet.create({
 
-// });

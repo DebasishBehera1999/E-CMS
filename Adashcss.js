@@ -62,7 +62,7 @@ export default StyleSheet.create({
         backgroundColor: "red"
       },
       viewText: {
-        backgroundColor: "blue"  
+        backgroundColor: "#2c3e50"  
       },
       updateText: {
         backgroundColor: "#0E7452"
@@ -97,6 +97,6 @@ export default StyleSheet.create({
       noDataText: {
         textAlign: "center",
         marginTop: 20
-      }
+      },
     
 });
